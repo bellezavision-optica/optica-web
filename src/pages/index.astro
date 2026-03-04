@@ -1,0 +1,860 @@
+---
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
+
+const siteName = "Óptica Belleza Visión";
+
+const navLinks = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Colecciones", href: "#colecciones" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Testimonios", href: "#testimonios" },
+  { label: "Contacto", href: "#contacto" },
+];
+
+const images = {
+  hero: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1400&q=80",
+  about:
+    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80",
+  collections: [
+    "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=80&sat=-15",
+    "https://images.unsplash.com/photo-1528701800489-20be0a62b7b3?auto=format&fit=crop&w=1200&q=80",
+  ],
+};
+
+const services = [
+  {
+    icon: "scanEye",
+    title: "Examen Visual Completo",
+    description:
+      "Evaluaciones precisas con equipos de última generación para detectar cualquier problema de visión.",
+  },
+  {
+    icon: "glasses",
+    title: "Lentes Graduados",
+    description:
+      "Lentes monofocales, bifocales y progresivos con los mejores tratamientos antirreflejantes.",
+  },
+  {
+    icon: "eye",
+    title: "Lentes de Contacto",
+    description:
+      "Adaptación profesional de lentes de contacto blandos, rígidos y especializados.",
+  },
+  {
+    icon: "shieldCheck",
+    title: "Lentes de Sol",
+    description:
+      "Protección UV certificada con diseños exclusivos de las mejores marcas internacionales.",
+  },
+];
+
+const collections = [
+  {
+    title: "Monturas Clásicas",
+    description:
+      "Elegancia atemporal con líneas refinadas para un estilo sofisticado.",
+    image: images.collections[0],
+  },
+  {
+    title: "Gafas de Sol",
+    description: "Protección premium con diseños que marcan tendencia.",
+    image: images.collections[1],
+  },
+  {
+    title: "Línea Deportiva",
+    description: "Rendimiento y resistencia para un estilo de vida activo.",
+    image: images.collections[2],
+  },
+];
+
+const stats = [
+  { icon: "clock", value: "25+", label: "Años de experiencia" },
+  { icon: "users", value: "15,000+", label: "Pacientes atendidos" },
+  { icon: "award", value: "50+", label: "Marcas disponibles" },
+  { icon: "heart", value: "98%", label: "Satisfacción" },
+];
+
+const testimonials = [
+  {
+    name: "María García",
+    role: "Clienta desde 2018",
+    text: "Excelente atención y profesionalismo. Encontré las monturas perfectas y el examen visual fue muy completo. Totalmente recomendados.",
+    stars: 5,
+  },
+  {
+    name: "Carlos Rodríguez",
+    role: "Cliente desde 2020",
+    text: "Mi familia y yo siempre acudimos aquí. El equipo es increíble, siempre amables y con las mejores recomendaciones para nuestra salud visual.",
+    stars: 5,
+  },
+  {
+    name: "Ana Martínez",
+    role: "Clienta desde 2022",
+    text: "Me adaptaron lentes de contacto por primera vez y la experiencia fue maravillosa. Paciencia, profesionalismo y un resultado perfecto.",
+    stars: 5,
+  },
+];
+
+const contactInfo = [
+  {
+    icon: "mapPin",
+    title: "Dirección",
+    details: ["Av. Principal #123", "Centro Comercial Vista, Local 45"],
+  },
+  {
+    icon: "phone",
+    title: "Teléfono",
+    details: ["+52 (55) 1234-5678", "+52 (55) 8765-4321"],
+  },
+  {
+    icon: "mail",
+    title: "Email",
+    details: ["info@bellezavision.com", "citas@bellezavision.com"],
+  },
+  {
+    icon: "clock",
+    title: "Horario",
+    details: ["Lun - Vie: 9:00 - 19:00", "Sáb: 9:00 - 14:00"],
+  },
+];
+
+const footerLinks = [
+  {
+    heading: "Servicios",
+    links: ["Examen Visual", "Lentes Graduados", "Lentes de Contacto", "Lentes de Sol"],
+  },
+  {
+    heading: "Colecciones",
+    links: ["Monturas Clásicas", "Gafas de Sol", "Línea Deportiva", "Línea Infantil"],
+  },
+  {
+    heading: "Empresa",
+    links: ["Sobre Nosotros", "Nuestro Equipo", "Políticas de Garantía", "Preguntas Frecuentes"],
+  },
+];
+---
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteName}</title>
+    <meta
+      name="description"
+      content="Óptica Belleza Visión: exámenes visuales, lentes graduados, lentes de contacto y colecciones de monturas. Agenda tu cita hoy."
+    />
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <!-- SVG sprite (reemplazo de lucide-react) -->
+    <svg aria-hidden="true" class="hidden">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M5 12h12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13 6l6 6-6 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M11.48 3.5a.6.6 0 0 1 1.04 0l2.58 5.24c.1.2.3.35.53.38l5.78.84a.6.6 0 0 1 .33 1.03l-4.18 4.07c-.17.16-.25.4-.21.63l.99 5.76a.6.6 0 0 1-.87.63l-5.17-2.72a.6.6 0 0 0-.56 0l-5.17 2.72a.6.6 0 0 1-.87-.63l.99-5.76a.6.6 0 0 0-.21-.63L2.4 11.03a.6.6 0 0 1 .33-1.03l5.78-.84c.23-.03.43-.18.53-.38l2.44-5.24Z"
+          fill="currentColor"
+        />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 6h16M4 12h16M4 18h16"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M18 6 6 18M6 6l12 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+      </symbol>
+      <symbol id="i-glasses" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M6 14a3 3 0 1 1 0-6h2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M16 8h2a3 3 0 1 1 0 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M8 14a4 4 0 0 0 8 0"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M8 10h8"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-scan-eye" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 7V5h2M20 7V5h-2M4 17v2h2M20 17v2h-2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+      </symbol>
+      <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="m9 12 2 2 4-5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M12 6v6l4 2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M22 21v-2a4 4 0 0 0-3-3.87"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M16 3.13a4 4 0 0 1 0 7.75"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path
+          d="M8.5 14.5 7 22l5-2 5 2-1.5-7.5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-8.6 1-1a5.5 5.5 0 0 0 0-7.8Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 22s7-4.5 7-12a7 7 0 1 0-14 0c0 7.5 7 12 7 12Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 2 .6 3 .7A2 2 0 0 1 22 16.9Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 4h16v16H4V4Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+        <path
+          d="m4 7 8 6 8-6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <!-- Navbar -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#inicio" class="flex items-center gap-2">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+            <svg class="h-5 w-5" aria-hidden="true"><use href="#i-eye" /></svg>
+          </span>
+          <span class="text-lg font-semibold tracking-tight">{siteName}</span>
+        </a>
+
+        <div class="hidden items-center gap-8 md:flex">
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="text-sm tracking-wide text-slate-600 transition-colors hover:text-slate-900"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="hidden md:block">
+          <a
+            href="#contacto"
+            class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Agendar Cita
+          </a>
+        </div>
+
+        <button
+          id="nav-toggle"
+          class="inline-flex items-center justify-center rounded-md p-2 text-slate-900 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 md:hidden"
+          aria-label="Abrir menú"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >
+          <svg id="nav-icon-open" class="h-6 w-6" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg id="nav-icon-close" class="hidden h-6 w-6" aria-hidden="true"><use href="#i-x" /></svg>
+        </button>
+      </nav>
+
+      <div id="mobile-nav" class="hidden border-t border-slate-200 bg-white px-6 py-6 md:hidden">
+        <div class="flex flex-col gap-4">
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="mobile-nav-link text-sm tracking-wide text-slate-600 transition-colors hover:text-slate-900"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+          <a
+            href="#contacto"
+            class="mobile-nav-link mt-2 inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Agendar Cita
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="relative flex min-h-screen items-center pt-24">
+        <div class="mx-auto grid w-full max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
+          <div class="flex flex-col gap-6">
+            <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+              Expertos en salud visual
+            </p>
+            <h1 class="text-balance text-5xl font-semibold leading-tight text-slate-900 md:text-6xl lg:text-7xl">
+              Tu mirada merece lo mejor
+            </h1>
+            <p class="max-w-lg text-lg leading-relaxed text-slate-600">
+              En {siteName} combinamos tecnología de vanguardia con un servicio
+              personalizado para cuidar tu visión con la excelencia que mereces.
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#contacto"
+                class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Agendar Cita
+                <svg class="ml-2 h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </a>
+              <a
+                href="#colecciones"
+                class="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Ver Colecciones
+              </a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
+              <img
+                src={images.hero}
+                alt="Monturas de diseñador en exhibición"
+                width="700"
+                height="500"
+                class="h-auto w-full object-cover"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="servicios" class="py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto mb-16 max-w-2xl text-center">
+            <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+              Nuestros Servicios
+            </p>
+            <h2 class="mt-3 text-balance text-4xl font-semibold text-slate-900 md:text-5xl">
+              Cuidamos cada detalle de tu visión
+            </h2>
+          </div>
+
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              services.map((service) => (
+                <div class="group rounded-xl border border-slate-200 bg-white p-8 transition-all hover:border-indigo-200 hover:shadow-sm">
+                  <div class="mb-6 inline-flex rounded-lg bg-slate-50 p-3 text-indigo-600">
+                    <svg class="h-6 w-6" aria-hidden="true">
+                      <use href={`#i-${service.icon}`} />
+                    </svg>
+                  </div>
+                  <h3 class="mb-3 text-xl font-semibold text-slate-900">{service.title}</h3>
+                  <p class="text-sm leading-relaxed text-slate-600">{service.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Collections -->
+      <section id="colecciones" class="bg-slate-50 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto mb-16 max-w-2xl text-center">
+            <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+              Colecciones
+            </p>
+            <h2 class="mt-3 text-balance text-4xl font-semibold text-slate-900 md:text-5xl">
+              Encuentra tu estilo perfecto
+            </h2>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-3">
+            {
+              collections.map((item) => (
+                <a
+                  href="#contacto"
+                  class="group block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                  aria-label={`Explorar ${item.title}`}
+                >
+                  <div class="overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      width="500"
+                      height="350"
+                      class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="p-6">
+                    <h3 class="mb-2 text-2xl font-semibold text-slate-900">{item.title}</h3>
+                    <p class="mb-4 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                    <span class="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 transition-colors group-hover:text-slate-900">
+                      Explorar
+                      <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+                        <use href="#i-arrow-right" />
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="nosotros" class="py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid items-center gap-16 lg:grid-cols-2">
+            <div class="relative">
+              <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
+                <img
+                  src={images.about}
+                  alt={`Examen visual profesional en ${siteName}`}
+                  width="600"
+                  height="450"
+                  class="h-auto w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+                Sobre Nosotros
+              </p>
+              <h2 class="text-balance text-4xl font-semibold text-slate-900 md:text-5xl">
+                Tu salud visual en las mejores manos
+              </h2>
+              <p class="leading-relaxed text-slate-600">
+                Desde hace más de 25 años, {siteName} se ha dedicado a ofrecer el
+                mejor servicio óptico con profesionales altamente capacitados y la
+                tecnología más avanzada del sector.
+              </p>
+              <p class="leading-relaxed text-slate-600">
+                Nuestro compromiso es brindar atención personalizada, asegurándonos
+                de que cada paciente reciba la solución visual que mejor se adapte a
+                sus necesidades y estilo de vida.
+              </p>
+
+              <div class="mt-4 grid grid-cols-2 gap-6">
+                {
+                  stats.map((stat) => (
+                    <div class="flex items-start gap-3">
+                      <div class="mt-1 rounded-lg bg-slate-50 p-2 text-indigo-600">
+                        <svg class="h-5 w-5" aria-hidden="true">
+                          <use href={`#i-${stat.icon}`} />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-2xl font-semibold text-slate-900">{stat.value}</p>
+                        <p class="text-sm text-slate-600">{stat.label}</p>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonios" class="bg-slate-50 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto mb-16 max-w-2xl text-center">
+            <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+              Testimonios
+            </p>
+            <h2 class="mt-3 text-balance text-4xl font-semibold text-slate-900 md:text-5xl">
+              Lo que dicen nuestros pacientes
+            </h2>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-3">
+            {
+              testimonials.map((testimonial) => (
+                <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+                  <div class="mb-4 flex gap-1 text-indigo-600">
+                    {Array.from({ length: testimonial.stars }).map((_, i) => (
+                      <svg class="h-4 w-4" aria-hidden="true">
+                        <use href="#i-star" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p class="mb-6 leading-relaxed text-slate-600">“{testimonial.text}”</p>
+                  <div>
+                    <p class="font-medium text-slate-900">{testimonial.name}</p>
+                    <p class="text-sm text-slate-600">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contacto" class="py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid gap-16 lg:grid-cols-2">
+            <div>
+              <p class="text-sm font-medium uppercase tracking-widest text-indigo-600">
+                Contacto
+              </p>
+              <h2 class="mt-3 text-balance text-4xl font-semibold text-slate-900 md:text-5xl">
+                Agenda tu cita hoy
+              </h2>
+              <p class="mt-4 max-w-md leading-relaxed text-slate-600">
+                Estamos aquí para cuidar tu visión. Contáctanos para agendar tu
+                examen visual o para cualquier consulta.
+              </p>
+
+              <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                {
+                  contactInfo.map((item) => (
+                    <div class="flex gap-4">
+                      <div class="mt-1 rounded-lg bg-slate-50 p-2.5 text-indigo-600">
+                        <svg class="h-5 w-5" aria-hidden="true">
+                          <use href={`#i-${item.icon}`} />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="font-medium text-slate-900">{item.title}</p>
+                        {item.details.map((detail) => (
+                          <p class="text-sm text-slate-600">{detail}</p>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+              <h3 class="mb-6 text-2xl font-semibold text-slate-900">Solicita tu cita</h3>
+              <form id="contact-form" class="flex flex-col gap-5">
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    <label for="name" class="text-sm font-medium text-slate-900">Nombre</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Tu nombre completo"
+                      class="rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      required
+                    />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label for="phone" class="text-sm font-medium text-slate-900">Teléfono</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Tu número de teléfono"
+                      class="rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="email" class="text-sm font-medium text-slate-900">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="tu@email.com"
+                    class="rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="service" class="text-sm font-medium text-slate-900">Servicio</label>
+                  <select
+                    id="service"
+                    name="service"
+                    class="rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    required
+                  >
+                    <option value="" selected disabled hidden>Selecciona un servicio</option>
+                    <option value="exam">Examen Visual</option>
+                    <option value="lentes">Lentes Graduados</option>
+                    <option value="contacto">Lentes de Contacto</option>
+                    <option value="sol">Lentes de Sol</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="message" class="text-sm font-medium text-slate-900">Mensaje</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Cuéntanos cómo podemos ayudarte"
+                    class="resize-none rounded-md border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="mt-2 inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Enviar Solicitud
+                </button>
+                <p id="contact-feedback" class="hidden text-sm text-slate-600"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-slate-900 py-16 text-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
+                <svg class="h-5 w-5" aria-hidden="true"><use href="#i-eye" /></svg>
+              </span>
+              <span class="text-xl font-semibold">Belleza Visión</span>
+            </div>
+            <p class="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+              Más de 25 años cuidando la salud visual de nuestros pacientes con
+              profesionalismo, calidad y las mejores marcas del mercado.
+            </p>
+          </div>
+
+          {
+            footerLinks.map((group) => (
+              <div>
+                <p class="mb-4 text-sm font-medium uppercase tracking-wider text-white/90">
+                  {group.heading}
+                </p>
+                <ul class="flex flex-col gap-2.5">
+                  {group.links.map((link) => (
+                    <li>
+                      <a
+                        href="#contacto"
+                        class="text-sm text-white/70 transition-colors hover:text-white"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p class="text-sm text-white/50">
+            © 2026 {siteName}. Todos los derechos reservados.
+          </p>
+          <div class="flex gap-6">
+            <a href="#" class="text-sm text-white/50 transition-colors hover:text-white">
+              Política de Privacidad
+            </a>
+            <a href="#" class="text-sm text-white/50 transition-colors hover:text-white">
+              Términos y Condiciones
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const toggle = document.getElementById("nav-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+        const iconOpen = document.getElementById("nav-icon-open");
+        const iconClose = document.getElementById("nav-icon-close");
+
+        const setOpen = (open) => {
+          if (!toggle || !mobileNav || !iconOpen || !iconClose) return;
+          mobileNav.classList.toggle("hidden", !open);
+          iconOpen.classList.toggle("hidden", open);
+          iconClose.classList.toggle("hidden", !open);
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        };
+
+        if (toggle) {
+          toggle.addEventListener("click", () => {
+            const expanded = toggle.getAttribute("aria-expanded") === "true";
+            setOpen(!expanded);
+          });
+        }
+
+        document.querySelectorAll(".mobile-nav-link").forEach((a) => {
+          a.addEventListener("click", () => setOpen(false));
+        });
+
+        const form = document.getElementById("contact-form");
+        const feedback = document.getElementById("contact-feedback");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (feedback) {
+              feedback.textContent =
+                "¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto para confirmar tu cita.";
+              feedback.classList.remove("hidden");
+            }
+            form.reset();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
